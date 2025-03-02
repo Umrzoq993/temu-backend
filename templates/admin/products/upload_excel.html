@@ -1,0 +1,13 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+
+{% block content %}
+  <h1>Upload Excel File</h1>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="id_excel_file">Select Excel File:</label>
+    <input type="file" name="excel_file" id="id_excel_file" accept=".xlsx,.xls">
+    <br><br>
+    <input type="submit" value="Upload">
+  </form>
+{% endblock %}
